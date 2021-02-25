@@ -4,9 +4,10 @@ import { CompletedChallenges } from "../components/CompletedChallenges";
 import { Countdown } from "../components/Countdown";
 import { ExperienceBar } from "../components/ExperienceBar";
 import { Profile } from "../components/Profile";
-import { ChallangeBox } from "../components/ChallangeBox";
+import { ChallengeBox } from "../components/ChallengeBox";
 
 import styles from '../styles/pages/Home.module.css';
+import { CountdownProvider } from '../contexts/CountdownContext';
 
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
 
     <ExperienceBar/>
     
+    <CountdownProvider>
     <section>
       <div>
         <Profile/>
@@ -25,9 +27,10 @@ export default function Home() {
         <Countdown/>
       </div>
       <div>
-        <ChallangeBox/>
+        <ChallengeBox/>
       </div>
     </section>
+    </CountdownProvider>
     </div>
   )
 }
